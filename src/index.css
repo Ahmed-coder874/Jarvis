@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-jarvis-dark text-white font-inter;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glow-text {
+    text-shadow: 0 0 10px #00D4FF, 0 0 20px #00D4FF, 0 0 30px #00D4FF;
+  }
+  
+  .glow-border {
+    box-shadow: 0 0 20px #00D4FF40, inset 0 0 20px #00D4FF20;
+  }
+  
+  .matrix-bg {
+    background: linear-gradient(45deg, transparent 30%, #00D4FF05 50%, transparent 70%);
+  }
+  
+  .scan-line {
+    background: linear-gradient(90deg, transparent, #00D4FF, transparent);
+    height: 2px;
+    width: 100%;
+    animation: scan 3s linear infinite;
+  }
+  
+  .typing-effect {
+    overflow: hidden;
+    border-right: 3px solid #00D4FF;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00D4FF;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0099CC;
+}
+
+/* Selection */
+::selection {
+  background: #00D4FF40;
+  color: #00D4FF;
+}
